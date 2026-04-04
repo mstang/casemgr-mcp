@@ -2,7 +2,7 @@
   "name": "casemgr-mcp",
   "version": "1.0.0",
   "description": "CaseMgr MCP Server — CMMN case management with 184 tools. Stdio-to-HTTP bridge for the CaseMgr hosted MCP endpoint.",
-  "mcpName": "io.github.mstang5000/casemgr-mcp",
+  "mcpName": "io.github.mstang/casemgr-mcp",
   "bin": {
     "casemgr-mcp": "./index.js"
   },
@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mstang5000/casemgr-mcp.git"
+    "url": "https://github.com/mstang/casemgr-mcp.git"
   },
   "homepage": "https://casemgr.systems",
   "engines": {
