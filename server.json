@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mstang/casemgr-mcp",
+  "description": "CMMN case management with 184 MCP tools for cases, tasks, workflows, billing, and AI agents.",
+  "repository": {
+    "url": "https://github.com/mstang/casemgr-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "casemgr-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "CASEMGR_API_TOKEN",
+          "description": "API token from casemgr.systems/tokens",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
