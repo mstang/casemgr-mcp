@@ -1,7 +1,7 @@
 {
   "name": "casemgr-mcp",
-  "version": "1.0.0",
-  "description": "CaseMgr MCP Server — CMMN case management with 184 tools. Stdio-to-HTTP bridge for the CaseMgr hosted MCP endpoint.",
+  "version": "1.0.1",
+  "description": "A shared workspace your AI agent actually writes to — 184 MCP tools, persistent memory, semantic search. Stdio-to-HTTP bridge for CaseMgr's hosted MCP endpoint.",
   "mcpName": "io.github.mstang/casemgr-mcp",
   "bin": {
     "casemgr-mcp": "./index.js"
@@ -9,11 +9,13 @@
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "case-management",
-    "cmmn",
-    "billing",
-    "invoicing",
     "ai-agents",
+    "agent-memory",
+    "agent-coordination",
+    "agent-orchestration",
+    "shared-workspace",
+    "persistent-memory",
+    "semantic-search",
     "workflow"
   ],
   "author": "Mark Stang <markjstang@gmail.com>",
