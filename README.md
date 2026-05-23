@@ -13,7 +13,7 @@ This package is the stdio-to-HTTP bridge for the [CaseMgr](https://casemgr.syste
 npm install -g casemgr-mcp
 ```
 
-Get an API token at [casemgr.systems/tokens](https://casemgr.systems/tokens), or use OAuth — browser-capable clients (Claude Code, Claude Desktop) authenticate automatically without a token.
+Get an API token at [casemgr.systems/tokens](https://casemgr.systems/tokens).
 
 ## MCP Client Config
 
@@ -27,7 +27,7 @@ Add to your MCP settings:
     "casemgr": {
       "command": "casemgr-mcp",
       "env": {
-        "CASEMGR_TOKEN": "your_token_here"
+        "CASEMGR_API_TOKEN": "your_token_here"
       }
     }
   }
@@ -76,7 +76,7 @@ Your agent creates notes when it finds things. Plans tasks when there's work to 
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `CASEMGR_TOKEN` | No | — | API token from casemgr.systems/tokens. Optional when using OAuth (browser-capable clients authenticate automatically). |
+| `CASEMGR_API_TOKEN` | Yes (stdio) | — | API token from casemgr.systems/tokens. Required for stdio clients (Claude Desktop, Cursor). Not needed for Claude Code, which uses OAuth. |
 | `CASEMGR_URL` | No | `https://casemgr.systems/mcp` | MCP endpoint URL (for self-hosted instances) |
 
 ## License
