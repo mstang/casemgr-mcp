@@ -4,12 +4,12 @@ startCommand:
   configSchema:
     type: object
     properties:
-      casemgrToken:
+      casemgrApiToken:
         type: string
-        description: "API token for CaseMgr. Optional — browser-capable clients (Claude Code, Claude Desktop) authenticate via OAuth automatically."
+        description: "API token from casemgr.systems/tokens. Required for stdio clients (Claude Desktop, Cursor). Not needed for Claude Code, which authenticates via OAuth automatically."
   commandFunction: |-
     (config) => ({
       command: "npx",
       args: ["-y", "casemgr-mcp"],
-      env: config.casemgrToken ? { CASEMGR_TOKEN: config.casemgrToken } : {}
+      env: config.casemgrApiToken ? { CASEMGR_API_TOKEN: config.casemgrApiToken } : {}
     })
