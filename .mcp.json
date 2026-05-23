@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "casemgr": {
+      "type": "http",
+      "url": "https://casemgr.systems/mcp"
+    }
+  }
+}
