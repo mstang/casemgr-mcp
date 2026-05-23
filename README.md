@@ -1,12 +1,11 @@
 # casemgr-mcp
 [![smithery badge](https://smithery.ai/badge/mstang/casemgr)](https://smithery.ai/servers/mstang/casemgr)
 
-
 **A shared workspace your AI agent actually writes to — 184 MCP tools.**
 
 It creates notes when it finds things, plans tasks when work appears, and marks them done. You review and edit. Persistent memory + semantic search across a graph of notes, tasks, and files.
 
-This package is the stdio-to-HTTP bridge for the [CaseMgr](https://casemgr.systems) MCP server — use it with any MCP client that supports stdio transport (Claude Desktop, Cursor, etc.). For Claude Code, see [below](#claude-code-cli) — it supports HTTP natively and doesn't need this bridge.
+This package is the stdio-to-HTTP bridge for the [CaseMgr](https://casemgr.systems) MCP server — use it with any MCP client that supports stdio transport (Claude Desktop, Cursor, etc.). For Claude Code, see [below](#claude-code-cli) — it supports HTTP natively and does not need this bridge.
 
 ## Quick Start
 
@@ -14,7 +13,7 @@ This package is the stdio-to-HTTP bridge for the [CaseMgr](https://casemgr.syste
 npm install -g casemgr-mcp
 ```
 
-Get an API token at [casemgr.systems/tokens](https://casemgr.systems/tokens).
+Get an API token at [casemgr.systems/tokens](https://casemgr.systems/tokens), or use OAuth — browser-capable clients (Claude Code, Claude Desktop) authenticate automatically without a token.
 
 ## MCP Client Config
 
@@ -28,7 +27,7 @@ Add to your MCP settings:
     "casemgr": {
       "command": "casemgr-mcp",
       "env": {
-        "CASEMGR_API_TOKEN": "your_token_here"
+        "CASEMGR_TOKEN": "your_token_here"
       }
     }
   }
@@ -37,20 +36,23 @@ Add to your MCP settings:
 
 ### Claude Code (CLI)
 
-Claude Code supports Streamable HTTP natively — you don't need this bridge:
+Claude Code authenticates via OAuth automatically — no token needed. Just add the server URL:
 
 ```json
 {
   "mcpServers": {
     "casemgr": {
-      "url": "https://casemgr.systems/mcp",
-      "headers": {
-        "Authorization": "Bearer your_token_here"
-      }
+      "url": "https://casemgr.systems/mcp"
     }
   }
 }
 ```
+
+If you prefer token auth, add `"headers": { "Authorization": "Bearer your_token_here" }`.
+
+### Smithery
+
+Install directly via [Smithery](https://smithery.ai/servers/mstang/casemgr) — one-click setup for Claude Code, Cursor, Codex, and more.
 
 ## What is CaseMgr?
 
@@ -74,7 +76,7 @@ Your agent creates notes when it finds things. Plans tasks when there's work to 
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `CASEMGR_API_TOKEN` | Yes | — | API token from casemgr.systems/tokens |
+| `CASEMGR_TOKEN` | No | — | API token from casemgr.systems/tokens. Optional when using OAuth (browser-capable clients authenticate automatically). |
 | `CASEMGR_URL` | No | `https://casemgr.systems/mcp` | MCP endpoint URL (for self-hosted instances) |
 
 ## License
