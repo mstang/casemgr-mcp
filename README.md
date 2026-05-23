@@ -1,4 +1,6 @@
 # casemgr-mcp
+[![smithery badge](https://smithery.ai/badge/mstang/casemgr)](https://smithery.ai/servers/mstang/casemgr)
+
 
 **A shared workspace your AI agent actually writes to — 184 MCP tools.**
 
