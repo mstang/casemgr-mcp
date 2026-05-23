@@ -1,0 +1,15 @@
+# Smithery configuration — https://smithery.ai/docs/config#smitheryyaml
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      casemgrToken:
+        type: string
+        description: "API token for CaseMgr. Optional — browser-capable clients (Claude Code, Claude Desktop) authenticate via OAuth automatically."
+  commandFunction: |-
+    (config) => ({
+      command: "npx",
+      args: ["-y", "casemgr-mcp"],
+      env: config.casemgrToken ? { CASEMGR_TOKEN: config.casemgrToken } : {}
+    })
